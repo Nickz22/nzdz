@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="JSON to Table">
+        <table class="slds-table slds-table_cell-buffer">
+            <tbody>
+                <template for:each={sections} for:item="section">
+                    <tr key={section.key} class="header-row">
+                        <th colspan="2" class="slds-text-title_caps">{section.name}</th>
+                    </tr>
+                    <template for:each={section.fields} for:item="field">
+                        <tr key={field.key}>
+                            <td>{field.name}</td>
+                            <td>
+                                <template if:true={field.isBoolean}>
+                                    <lightning-input type="checkbox" checked={field.value} readonly></lightning-input>
+                                </template>
+                                <template if:false={field.isBoolean}>
+                                    {field.value}
+                                </template>
+                            </td>
+                        </tr>
+                    </template>
+                </template>
+            </tbody>
+        </table>
+    </lightning-card>
+</template>

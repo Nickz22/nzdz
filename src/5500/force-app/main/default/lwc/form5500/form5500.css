@@ -1,0 +1,9 @@
+.slds-table {
+    width: 100%;
+    margin: 1em 0;
+}
+
+.header-row {
+    background-color: rgba(184, 176, 176, 0.814);
+    color: white;
+}
